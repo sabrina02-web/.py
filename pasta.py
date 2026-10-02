@@ -51,8 +51,10 @@ while deseja_continuar.upper() == "S":
 
     if codigo_valido:
         quantidade = int(input(f"Digite a quantidade de '{nome_produto}': "))
+        while quantidade <= 0:
+            quantidade = int(input("Quantidade inválida! Digite um valor maior que zero: "))
+        
         subtotal = preco_unitario * quantidade
-
         total_compra = total_compra + subtotal
 
         print(f" Adicionado: {quantidade}x {nome_produto} = R$ {subtotal:.2f}")
@@ -72,7 +74,7 @@ print("3 - Cartão")
 opcao_pagamento = input("Escolha a opção de pagamento (1, 2 ou 3): ")
 
 while opcao_pagamento != "1" and opcao_pagamento != "2" and opcao_pagamento != "3":
-    print("⚠️ Opção inválida! Escolha 1, 2 ou 3.")
+    print("Opção inválida! Escolha 1, 2 ou 3.")
     opcao_pagamento = input("Escolha a opção de pagamento (1, 2 ou 3): ")
 
 if opcao_pagamento == "1":
